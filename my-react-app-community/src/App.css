@@ -1,0 +1,303 @@
+/* General Body and Font Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter as per instructions */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Light background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #2c3e50; /* Dark blue */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Single column for mobile */
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+    }
+    #feedback-form-section {
+        grid-column: span 1; /* Form takes one column */
+    }
+    #aggregate-rating-section {
+        grid-column: span 1; /* Aggregate rating takes one column */
+    }
+    #feedback-list-section {
+        grid-column: span 2; /* Feedback list spans both columns */
+    }
+    #admin-auth-section {
+        grid-column: span 2; /* Admin section spans both columns */
+    }
+}
+
+/* Card Styling for Sections */
+.card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    border-bottom: 2px solid #3498db; /* Blue underline */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #3498db; /* Highlight on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Buttons */
+.button-primary, .button-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.button-primary {
+    background-color: #3498db; /* Blue */
+    color: white;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.button-primary:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background-color: #95a5a6; /* Grey */
+    color: white;
+    box-shadow: 0 4px 8px rgba(149, 165, 166, 0.3);
+}
+
+.button-secondary:hover {
+    background-color: #7f8c8d; /* Darker grey on hover */
+    transform: translateY(-2px);
+}
+
+.button-danger {
+    background-color: #e74c3c; /* Red */
+    color: white;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.button-danger:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: translateY(-2px);
+}
+
+/* Star Rating */
+.star-rating {
+    font-size: 1.8em;
+    color: #ccc; /* Default star color */
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.star-rating i {
+    transition: color 0.2s ease;
+}
+
+.star-rating i.fas {
+    color: #f39c12; /* Filled star color (gold/orange) */
+}
+
+.star-rating i:hover {
+    color: #f1c40f; /* Lighter gold on hover */
+}
+
+/* Messages (Error, Success) */
+.error-message {
+    color: #e74c3c; /* Red */
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block; /* Ensure it takes its own line */
+}
+
+.success-message {
+    color: #27ae60; /* Green */
+    font-size: 0.9em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Aggregate Rating Display */
+#aggregate-rating-section p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.gold-star {
+    color: #f39c12; /* Gold color for the average star icon */
+}
+
+/* Feedback List */
+#feedbackList {
+    margin-top: 20px;
+}
+
+.feedback-item {
+    background-color: #ecf0f1; /* Light grey for items */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative; /* For positioning buttons */
+}
+
+.feedback-item h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #34495e;
+    font-size: 1.3em;
+}
+
+.feedback-item .rating-display {
+    font-size: 1.2em;
+    color: #f39c12; /* Gold stars */
+    margin-bottom: 8px;
+}
+
+.feedback-item p {
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.feedback-item .submission-date {
+    font-size: 0.85em;
+    color: #777;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.feedback-item .actions {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.feedback-item .actions button {
+    margin-left: 8px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+#noFeedbackMessage {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Admin Auth Section */
+#admin-auth-section {
+    grid-column: span 1; /* Default to single column for mobile */
+}
+
+#admin-auth-section h2 {
+    border-bottom-color: #f39c12; /* Orange underline for admin section */
+}
+
+.auth-form {
+    margin-top: 15px;
+}
+
+#auth-status {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #27ae60; /* Green for logged in status */
+}
+
+#auth-status #loggedInUser {
+    margin-right: 15px;
+}
+
+#loginError {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #34495e; /* Darker blue-grey */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
